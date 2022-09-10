@@ -1,0 +1,45 @@
+{
+  "name": "react-threeco",
+  "version": "1.0.0",
+  "description": "Animate (interactive) 3D and 2D graphics in React",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wesone/react-threeco.git"
+  },
+  "keywords": [
+    "2d",
+    "3d",
+    "interactive",
+    "animate",
+    "render",
+    "loop",
+    "webgl",
+    "three.js",
+    "threejs",
+    "canvas",
+    "react",
+    "reactjs",
+    "hook",
+    "component"
+  ],
+  "author": "wesone",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.9",
+    "@types/react": "^18.0.18",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
+    "eslint": "^8.23.0",
+    "eslint-plugin-brace-rules": "^0.1.6",
+    "typescript": "^4.8.2"
+  }
+}
