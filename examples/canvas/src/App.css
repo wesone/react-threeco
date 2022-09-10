@@ -1,0 +1,27 @@
+.App {
+    background: #000000;
+}
+
+.App .options {
+    position: fixed;
+    top: 0;
+}
+
+.App .options button {
+    border: none;
+    text-decoration: none;
+    background-color: #ff6000;
+    color: #ffffff;
+    margin: .6em;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+.App .options button:hover {
+    background-color: #883300;
+}
+
+canvas {
+    background-color: #000000;
+}
