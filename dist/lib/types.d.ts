@@ -1,6 +1,6 @@
 export interface Config {
     onUpdate?: {
-        (deltaTime: number): void;
+        (deltaTime: number, now: DOMHighResTimeStamp): void;
     };
     onRender: {
         (): void;
@@ -10,6 +10,6 @@ export interface Config {
     };
     autorun?: boolean;
 }
-export declare type SetupFn = {
+export type SetupFn = {
     (...context: unknown[]): Config;
 };

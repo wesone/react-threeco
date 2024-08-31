@@ -13,7 +13,7 @@ type Props = {
 
 const Threeco: FC<Props> = ({setup, context, isRunning, children}) => {
     const args = Array.isArray(context)
-        ? context 
+        ? context
         : [context];
     const {setRunning} = useThreeco(setup, ...args);
 

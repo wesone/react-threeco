@@ -1,6 +1,6 @@
 export interface Config {
     onUpdate?: {
-        (deltaTime: number): void;
+        (deltaTime: number, now: DOMHighResTimeStamp): void;
     };
     onRender: {
         (): void;

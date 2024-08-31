@@ -5,7 +5,7 @@ const useThreeco = (setup, ...context) => {
     const animateRef = useRef();
     const [isRunning, setRunning] = useState(false);
     const pause = () => {
-        if (!(frameId.current !== null))
+        if (!frameId.current)
             return;
         cancelAnimationFrame(frameId.current);
         frameId.current = null;
@@ -21,11 +21,11 @@ const useThreeco = (setup, ...context) => {
     };
     useEffect(() => {
         const { onUpdate, onRender, onUnmount, autorun } = setup(...context);
-        const animate = (now) => {
+        const animate = (timestamp) => {
             frameId.current = window.requestAnimationFrame(animate);
-            const deltaTime = (now - lastTime.current) / 1000;
-            lastTime.current = now;
-            onUpdate === null || onUpdate === void 0 ? void 0 : onUpdate(deltaTime);
+            const deltaTime = (timestamp - lastTime.current) / 1000;
+            lastTime.current = timestamp;
+            onUpdate === null || onUpdate === void 0 ? void 0 : onUpdate(deltaTime, timestamp);
             onRender();
         };
         animateRef.current = animate;

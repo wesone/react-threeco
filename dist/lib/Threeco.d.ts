@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
 import { SetupFn } from './types';
-declare type Props = {
+type Props = {
     setup: SetupFn;
     context?: unknown;
     isRunning?: boolean;

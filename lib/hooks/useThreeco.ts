@@ -16,13 +16,13 @@ interface useThreeco {
 }
 
 const useThreeco = (setup: SetupFn, ...context: unknown[]): useThreeco => {
-    const frameId = useRef<number|null>(null);
+    const frameId = useRef<number | null>(null);
     const lastTime = useRef<DOMHighResTimeStamp>(window.performance.now());
     const animateRef = useRef<(now: DOMHighResTimeStamp) => void>();
     const [isRunning, setRunning] = useState<boolean>(false);
 
     const pause = () => {
-        if(!(frameId.current !== null))
+        if(!frameId.current)
             return;
         cancelAnimationFrame(frameId.current);
         frameId.current = null;
@@ -42,16 +42,16 @@ const useThreeco = (setup: SetupFn, ...context: unknown[]): useThreeco => {
     useEffect(() => {
         const {
             onUpdate,
-            onRender, 
+            onRender,
             onUnmount,
             autorun
         } = setup(...context);
 
-        const animate = (now: DOMHighResTimeStamp) => {
+        const animate = (timestamp: DOMHighResTimeStamp) => {
             frameId.current = window.requestAnimationFrame(animate);
-            const deltaTime = (now - lastTime.current) / 1000;
-            lastTime.current = now;
-            onUpdate?.(deltaTime);   
+            const deltaTime = (timestamp - lastTime.current) / 1000;
+            lastTime.current = timestamp;
+            onUpdate?.(deltaTime, timestamp);
             onRender();
         };
         animateRef.current = animate;

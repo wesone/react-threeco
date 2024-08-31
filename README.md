@@ -145,7 +145,7 @@ The function must then return an object of the following shape:
 
 Key | Description
 :--- | :---
-`onUpdate?: (deltaTime: number) => void` | A function to update your scene. Time-based values should be multiplied by `deltaTime` (the time in seconds since the last `onUpdate` was called).<br><br>If you don't set `onUpdate`, there won't be a render loop and your scene will render only once (which may be desired if you want a static scene).
+`onUpdate?: (deltaTime: number, timestamp: DOMHighResTimeStamp) => void` | A function to update your scene. Time-based values should be multiplied by `deltaTime` (the time in seconds since the last `onUpdate` was called). The second parameter `timestamp` is the timestamp in milliseconds of the last call to `onUpdate`.<br><br>If you don't set `onUpdate`, there won't be a render loop and your scene will render only once (which may be desired if you want a static scene).
 `onRender: () => void` | A function that is used to render (or redraw) your scene.<br><br>While `onUpdate` should do all the math, this function should be responsible for displaying everything.<br><br>The `onRender` function will be called after `onUpdate`. If there is no `onUpdate` function, `onRender` will be called only once.
 `onUnmount?: () => void` | If your setup added elements to the [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) or registered listeners, this function is used to tidy up. It will be called when your component gets unmounted.
 `autorun?: boolean` | An optional flag to determine if the render loop should start automatically after the setup. This is `true` by default.
