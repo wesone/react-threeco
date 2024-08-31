@@ -1,6 +1,6 @@
 {
   "name": "react-threeco",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Animate (interactive) 3D and 2D graphics in React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
