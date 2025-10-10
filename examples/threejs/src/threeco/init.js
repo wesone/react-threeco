@@ -50,11 +50,12 @@ const init = domRef => {
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
         composer.setSize(window.innerWidth, window.innerHeight);
-    }
+    };
     window.addEventListener('resize', onWindowResize);
     onWindowResize();
 
-    domRef.current.appendChild(renderer.domElement);
+    const dom = domRef.current;
+    dom.appendChild(renderer.domElement);
 
     const rotationSpeed = .25;
 
@@ -64,11 +65,12 @@ const init = domRef => {
         },
         onRender: () => {
             // renderer.render(scene, camera);
+            console.log(mesh.rotation.y);
             composer.render();
-        }, 
+        },
         onUnmount: () => {
             window.removeEventListener('resize', onWindowResize);
-            domRef.current.removeChild(renderer.domElement);
+            dom.removeChild(renderer.domElement);
         },
         // autorun: false
     };

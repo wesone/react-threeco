@@ -1,5 +1,5 @@
-import {FC, ReactNode} from 'react';
-import {SetupFn} from './types';
+import type {FC, ReactNode} from 'react';
+import type {SetupFn} from './types';
 
 import {useEffect} from 'react';
 import useThreeco from './hooks/useThreeco';

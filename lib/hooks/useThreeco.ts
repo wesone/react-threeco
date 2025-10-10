@@ -1,4 +1,4 @@
-import {SetupFn} from '../types';
+import type {SetupFn} from '../types';
 
 import {useEffect, useRef, useState} from 'react';
 

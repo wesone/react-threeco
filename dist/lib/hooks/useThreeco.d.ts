@@ -1,4 +1,4 @@
-import { SetupFn } from '../types';
+import type { SetupFn } from '../types';
 interface useThreeco {
     run: {
         (): void;

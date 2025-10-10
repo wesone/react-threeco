@@ -71,7 +71,7 @@ const generateThreecoMesh = () => {
             </g>
         </svg>
     `);
-    const object = new THREE.Group();  
+    const object = new THREE.Group();
 
     for(const path of svg.paths)
         for(const shape of SVGLoader.createShapes(path))
@@ -96,7 +96,7 @@ const generateThreecoMesh = () => {
 
     // rotate -180°
     object.rotateX(-Math.PI);
-  
+
     return object;
 };
 
