@@ -59,14 +59,14 @@ export default tseslint.config(
                 {
                     'after': true,
                     'overrides': {
-                        'catch': { 'after': false },
-                        'do': { 'after': false },
-                        'for': { 'after': false },
-                        'function': { 'after': false },
-                        'if': { 'after': false },
-                        'switch': { 'after': false },
-                        'try': { 'after': false },
-                        'while': { 'after': false }
+                        'catch': {'after': false},
+                        'do': {'after': false},
+                        'for': {'after': false},
+                        'function': {'after': false},
+                        'if': {'after': false},
+                        'switch': {'after': false},
+                        'try': {'after': false},
+                        'while': {'after': false}
                     }
                 }
             ],
@@ -91,7 +91,8 @@ export default tseslint.config(
             ],
             'no-undef': 'off',
             'no-unneeded-ternary': 'warn',
-            'no-unused-vars': 'warn',
+            'no-unused-vars': 'off',
+            '@typescript-eslint/no-unused-vars': ['warn'],
             'no-var': 'error',
             '@stylistic/js/no-whitespace-before-property': 'error',
             '@stylistic/js/nonblock-statement-body-position': ['error', 'below'],

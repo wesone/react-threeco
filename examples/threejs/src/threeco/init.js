@@ -1,9 +1,9 @@
 import * as THREE from 'three';
-import {EffectComposer} from 'three/examples/jsm/postprocessing/EffectComposer';
-import {RenderPass} from 'three/examples/jsm/postprocessing/RenderPass';
+import {EffectComposer} from 'three/examples/jsm/Addons.js';
+import {RenderPass} from 'three/examples/jsm/Addons.js';
 
-import {SSAARenderPass} from 'three/examples/jsm/postprocessing/SSAARenderPass';
-import {UnrealBloomPass} from 'three/examples/jsm/postprocessing/UnrealBloomPass';
+import {SSAARenderPass} from 'three/examples/jsm/Addons.js';
+import {UnrealBloomPass} from 'three/examples/jsm/Addons.js';
 
 import generateThreecoMesh from './generateThreecoMesh';
 
