@@ -1,21 +1,25 @@
-import type {FC, ReactNode} from 'react';
+import type {ReactNode} from 'react';
 import type {SetupFn} from './types';
 
 import {useEffect} from 'react';
 import useThreeco from './hooks/useThreeco';
 
-type Props = {
-    setup: SetupFn;
-    context?: unknown;
+type Props<Context extends unknown[] = never[]> = {
+    setup: SetupFn<Context>;
     isRunning?: boolean;
     children?: ReactNode;
-}
+} & (
+    Context extends never[]
+        ? object
+        : {
+            context: Context;
+        }
+)
 
-const Threeco: FC<Props> = ({setup, context, isRunning, children}) => {
-    const args = Array.isArray(context)
-        ? context
-        : [context];
-    const {setRunning} = useThreeco(setup, ...args);
+const Threeco = <Context extends unknown[] = never[]>(props: Props<Context>) => {
+    const {setup, isRunning, children} = props;
+    const context = 'context' in props ? props.context : [];
+    const {setRunning} = useThreeco<[]>(setup, ...context as []);
 
     useEffect(() => {
         if(isRunning !== undefined)

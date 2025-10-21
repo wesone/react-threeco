@@ -11,5 +11,5 @@ interface useThreeco {
     };
     isRunning: boolean;
 }
-declare const useThreeco: (setup: SetupFn, ...context: unknown[]) => useThreeco;
+declare const useThreeco: <Context extends unknown[] = never[]>(setup: SetupFn<Context>, ...context: Context) => useThreeco;
 export default useThreeco;

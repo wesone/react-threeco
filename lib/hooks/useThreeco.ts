@@ -15,7 +15,7 @@ interface useThreeco {
     isRunning: boolean;
 }
 
-const useThreeco = (setup: SetupFn, ...context: unknown[]): useThreeco => {
+const useThreeco = <Context extends unknown[] = never[]>(setup: SetupFn<Context>, ...context: Context): useThreeco => {
     const frameId = useRef<number | null>(null);
     const lastTime = useRef<DOMHighResTimeStamp>(window.performance.now());
     const animateRef = useRef<(now: DOMHighResTimeStamp) => void>();

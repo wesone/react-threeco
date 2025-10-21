@@ -11,5 +11,5 @@ export interface Config {
     autorun?: boolean;
 }
 
-export type SetupFn<Context extends unknown[] = unknown[]> = (...context: [...Context]) => Config;
+export type SetupFn<Context extends unknown[] = never[]> = (...context: [...Context]) => Config;
 
